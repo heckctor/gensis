@@ -1,0 +1,15 @@
+@mixin fondo($img, $repeat, $pos, $size,$atach:fixed) {
+  background-image: $img;
+  background-repeat: $repeat;
+  background-position: $pos;
+  background-size:$size;
+  background-attachment:$atach;
+}
+@mixin fondoColor($color) {
+    background-color:($color);
+}
+@mixin degradado($angulo:0deg,$color1:$nada,$color2:$nada,$color3:$nada, $imagen:$nada) {
+    background: -webkit-linear-gradient($angulo,$color1,$color2,$color3)$imagen;
+    background: -moz-linear-gradient($angulo,$color1,$color2,$color3)$imagen;
+    background: linear-gradient($angulo,$color1,$color2,$color3)$imagen;
+}

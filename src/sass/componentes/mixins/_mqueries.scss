@@ -1,0 +1,15 @@
+@mixin min-media($corte){
+  @media screen and(min-width:$corte){
+    @content;
+  }
+}
+@mixin max-media($corte){
+  @media screen and(max-width:$corte){
+    @content;
+  }
+}
+@mixin min-max($min,$max){
+  @media only screen and (min-width : $min) and (max-width: $max )  {
+    @content;
+  }
+}

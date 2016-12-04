@@ -1,0 +1,35 @@
+
+    #contenedor {
+        %borde {
+            border: solid 1px darken($blanco, 30%);
+        }
+        %fondo {
+            background: darken($blanco, 5%);
+        }
+        header {
+            @extend %fondo;
+            @extend %borde;
+            #grupo-menu {
+                .logotipo {
+                    img {}
+                }
+                .menu {
+                    li {
+                        @extend %borde;
+                    }
+                }
+            }
+        }
+    }
+    .menu-movil{
+      @extend %borde;
+      background: darken($blanco, 30%);  
+    }
+    .columna{
+        @extend %fondo;
+         @extend %borde;
+    }
+    footer{
+        background: lighten($negro,20%);
+        color:$blanco;
+    }

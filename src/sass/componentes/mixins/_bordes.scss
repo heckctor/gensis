@@ -1,0 +1,13 @@
+@mixin borde($estilo: none, $color: $nada, $size: 1px) {
+    border-style: $estilo;
+    border-color:$color;
+    border-width: $size;
+}
+@mixin bordeInf($tam: 1px,$est:solid, $color:$nada) {
+  border-bottom:$tam $est $color;
+}
+@mixin bordeRadial($radio) {
+    -webkit-border-radius: $radio;
+    -moz-border-radius: $radio;
+    border-radius: $radio;
+}

@@ -1,0 +1,266 @@
+*,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+* {
+    &:focus {
+        outline: none;
+    }
+}
+
+body,
+html {
+    height: 100%;
+    min-height: 100%;
+    font-family: $fuenteGlobal;
+    @include fuente(16);
+}
+
+body {
+    overflow-x: hidden; //previene el scroll al margen derecho
+    position: relative;
+    height: 100%;
+    min-height: 100%;
+    color: $colorTexto;
+}
+
+a {
+    color: $colorPrimario;
+    text-decoration: none;
+}
+
+a:visited {
+    color: darken($colorPrimario, 25%);
+}
+
+a:active,
+a:focus,
+a:hover {}
+
+a:focus {
+    outline: thin dotted;
+}
+
+a:active,
+a:hover {
+    outline: 0;
+}
+
+p {
+    margin: .5em 0;
+}
+
+#contenedor {
+    .contenido {
+        max-width: $min-laptop;
+        margin: auto;
+        min-width: $min-movil;
+        padding: 0 .5em;
+    }
+}
+
+.header-principal {
+    min-width: $min-movil;
+    @include transicion;
+}
+
+#grupo-menu {
+    @include fila;
+    @include transicion($duracion: 1s);
+    .logotipo {
+        @include columna(3);
+        @include min-media($max-movil) {
+            max-width: 200px;
+        }
+        @include transicion($duracion:1s);
+        img {
+            width: 95%;
+            margin: auto;
+            max-width: 140px;
+            min-width: 100px;
+            display: block;
+            @include transicion($duracion: 1s);
+        }
+    }
+    .menu {
+        @include columna(9);
+        @include fila;
+        list-style: none;
+        @include max-media($min-tablet) {
+            position: absolute;
+            top: -150vh;
+            //left: 0; 
+        }
+        li {
+            //.
+            @include fila;
+            @include flex-auto;
+            @include transicion;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            a {
+                padding: .5em 2em;
+            }
+            @include max-media($min-tablet) {
+                padding: .5em;
+            }
+            &:hover {
+                background: $colorPrimario;
+                @include transicion;
+                a {
+                    color: $blanco;
+                    @include transicion;
+                }
+            }
+        }
+    }
+}
+
+.menu-movil {
+    @include min-media($min-tablet+1) {
+        display: none;
+    }
+    @include transicion($duracion: 1s);
+    position:fixed;    
+    background: $blanco;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 500;
+    img {
+        width: 20px;
+        height: auto;
+    }
+}
+.lat-izq{
+    @include max-media($min-tablet){
+        position: fixed!important;
+        left: -100vh!important;
+        top: -3px!important;
+        width: 50vw!important;
+        height: 100vh!important;
+        background: transparentize($negro, .1);
+        padding-top: 4em!important;
+        z-index: 400!important;
+        @include sombra;
+        @include transicion;
+    }
+}
+.lat-izq-reset{    
+    left: -3px!important; 
+}
+
+.lat-der{
+    @include max-media($min-tablet){
+        position: fixed!important;
+        right: -100vh!important; 
+        top: -3px!important;
+        width: 50vw!important;
+        height: 100vh!important;
+        background: transparentize($negro, .1);
+        padding-top: 4em!important;
+        z-index: 400!important;
+        @include sombra;
+        @include transicion;
+    }
+}
+.lat-der-reset{    
+    right: -3px!important; 
+}
+
+.inf{
+    @extend %abajo;
+    @include transicion($duracion: 1s);
+}
+.sup{
+    @extend %arriba;
+    @include transicion($duracion: 1s);
+}
+.sup-reset{
+    top:1px!important;
+    left:1px!important;
+}
+%abajo {
+    bottom: 15px;
+    right: 15px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+%arriba {
+    top: 15px;
+    left: 15px;
+    width: 40px;
+    height: 40px;
+}
+
+.header-fijo {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    @include transicion($duracion: 1s);
+    @include max-media($max-movil) {
+        #grupo-menu {
+            @include transicion($duracion: 1s);
+            .logotipo {
+                padding: 0;
+                img {
+                    width: 50px;
+                    @include transicion($duracion: 1s);
+                }
+            }
+            .menu {}
+        }
+    }
+}
+
+.io {
+    position: relative!important;
+    top: 0!important;
+}
+
+footer {
+    margin-top: 1em;
+    ul {
+        list-style: none;
+    }
+}
+
+//
+.txt-justificado {
+    @include justificado;
+}
+
+.txt-derecha {
+    @include derecha;
+}
+
+.txt-izquierda {
+    @include izquierda;
+}
+
+.txt-centrado {
+    @include centrado;
+}
+
+//
+.navegafeliz {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: $blanco;
+    background: $zanahoria;
+}
+
+//url('#{$rutaImg}/ejemplo.png')

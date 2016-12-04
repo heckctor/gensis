@@ -1,0 +1,36 @@
+/*
+Proyecto: gensis - Framework FrontEnd
+URL: https://github.com/heckctor/gensis
+Autor: heckctor
+Autor URI: https://heckctor.github.io/
+Descripcion: gensis Framework CSS - HTML  front-end
+Version: 1.0.0 Alpha
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+@charset "UTF-8";
+//Librerias
+@import 'componentes/librerias/normalize.scss';
+//Fuentes
+@import 'componentes/fuentes/fuentes.scss';
+//Variables
+@import 'componentes/variables/colores.scss';
+@import 'componentes/variables/variables.scss';
+//Mixins
+@import 'componentes/mixins/animaciones.scss';
+@import 'componentes/mixins/bordes.scss';
+@import 'componentes/mixins/cursor.scss';
+@import 'componentes/mixins/estado.scss';
+@import 'componentes/mixins/fondos.scss';
+@import 'componentes/mixins/formularios.scss';
+@import 'componentes/mixins/mqueries.scss';
+@import 'componentes/mixins/rejilla.scss';
+@import 'componentes/mixins/sombras.scss';
+@import 'componentes/mixins/texto.scss';
+//Mixins > Elementos
+@import 'componentes/mixins/elementos/botones.scss';
+//Estilos base
+@import 'componentes/estilos_base.scss';
+//Estilos Simples para el layout --> ELIMINAR o usar > para generar tus estilos
+@import 'componentes/layout.scss';

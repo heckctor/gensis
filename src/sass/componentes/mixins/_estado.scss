@@ -1,0 +1,8 @@
+@mixin estado($visible:null){
+  @if $visible == si && $visible == null{
+    display: block;
+  }
+  @if $visible == no{
+    display: none;
+  }
+}

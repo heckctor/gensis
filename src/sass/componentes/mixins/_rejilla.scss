@@ -1,0 +1,48 @@
+@mixin fila($valor:flex, $wrap:no-wrap) {
+    display: $valor;
+    flex-wrap: $wrap;
+    width: 100%;
+    @include max-media(640px){
+        flex-wrap: wrap;
+    }
+}
+
+@mixin columna($num:$num, $margen:.25, $padding:.7) {
+    margin: #{$margen}em;
+    padding: #{$padding}em;
+    $calculo-col: 100% / $columnas * $num - $margen - $padding;
+    //$calculo-col: 100% / $columnas * $num;
+    flex: 0 1 $calculo-col;
+}
+
+@mixin flex-auto {
+    flex: auto;
+    width: auto;
+}
+
+.fila {
+    @include fila;
+}
+
+@for $num-col from 1 through $columnas {
+    .cg-#{$num-col} {
+        @include columna($num-col);
+    }
+}
+@for $num-col from 1 through $columnas {
+    @include min-max(641px,1024px){
+        .cm-#{$num-col} {
+            @include columna($num-col);
+            margin:.15em;
+        }
+    }
+}
+@for $num-col from 1 through $columnas {
+    @include min-max(0px,640px){
+        .cc-#{$num-col} {
+            @include columna($num-col);
+            margin: .25em 0;
+        }
+    }
+}
+
